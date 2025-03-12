@@ -16,9 +16,9 @@ function App() {
       </Route>
   ))
   return (
-    <>
-    <RouterProvider router={router}/>
-    </>
+    <main className="font-[Roboto] bg-background">
+      <RouterProvider router={router}/>
+    </main>
   )
 }
 
