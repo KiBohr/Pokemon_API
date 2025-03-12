@@ -3,19 +3,18 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 
 const Layout = () => {
-    const location = useLocation()
+	const location = useLocation();
 
-    // hier muss der slash hin, ansonsten klappts nicht!
-    const hideHeader = location.pathname === "/filter"
-    
-    return ( 
-        <>
-        {!hideHeader && <Header/>}
-        <Outlet/>
-        <Footer/>
-        </>
+	// hier muss der slash hin, ansonsten klappts nicht!
+	const hideHeader = location.pathname === "/filter";
 
-     );
-}
+	return (
+		<>
+			{!hideHeader && <Header />}
+			<Outlet />
+			<Footer />
+		</>
+	);
+};
 
 export default Layout;

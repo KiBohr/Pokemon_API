@@ -2,10 +2,19 @@ import { createContext, useEffect, useState } from "react";
 import { PokemonList } from "../contracts/interfaces";
 import axios from "axios";
 
-export const mainContext = createContext({});
+export interface PokeContext {
+	pokemons: PokemonList[];
+	setPokemons: (list: PokemonList[]) => void;
+	dark: boolean;
+	setDark: (value: boolean) => void;
+}
+
+export const mainContext = createContext<PokeContext | null>(null);
 
 const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	const [pokemons, setPokemons] = useState<PokemonList[]>([]);
+
+	const [dark, setDark] = useState<boolean>(false);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -31,7 +40,7 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	});
 
 	return (
-		<mainContext.Provider value={{ pokemons, setPokemons }}>
+		<mainContext.Provider value={{ pokemons, setPokemons, dark, setDark }}>
 			{children}
 		</mainContext.Provider>
 	);
