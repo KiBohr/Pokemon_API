@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+    --color-text-inner: #FFCB05;
+    --color-text-outer: #2C72B8;
+    --color-background: #E3EEF1;
+
+    --color-bug: #3BB900;
+    --color-dark: #1C1C1C;
+    --color-dragon: #00458A;
+    --color-electric: #FFE600;
+    --color-fairy: #FFC2F9;
+    --color-fighting: #E40000;
+    --color-fire: #FF9900;
+    --color-flying: #CCDADD;
+    --color-ghost: #5A1E64;
+    --color-gras: #57921C;
+    --color-ground: #965A00;
+    --color-ice: #6AD2FF;
+    --color-normal: #B3B3B3;
+    --color-poison: #AB00AE;
+    --color-psychic:#FF81F2;
+    --color-rock: #E1B237;
+    --color-steel: #2A4950;
+    --color-water: #00A0E4;
+  }
+  
+  @font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200 700;
+    src: url("../public/fonts/Roboto-Regular.ttf") format("woff2");
+  }
