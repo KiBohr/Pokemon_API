@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { Pokemon, PokemonList } from "../contracts/interfaces";
+import { PokemonList } from "../contracts/interfaces";
 import axios from "axios";
 
 export const mainContext = createContext({});
