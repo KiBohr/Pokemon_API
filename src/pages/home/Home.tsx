@@ -9,7 +9,7 @@ const Home = () => {
 	const { pokemons, setPokemons } = useContext(mainContext) as any;
 
 	return (
-		<div>
+		<div className="grid grid-cols-2 gap-5 mx-5 my-10">
 			{pokemons.map((pokemon: PokemonList) => {
 				return (
 					<SingleCard pokemon={pokemon} key={pokemon.name + pokemon.url} />
