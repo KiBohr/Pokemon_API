@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { PokemonList } from "../contracts/interfaces";
+import { IType, PokemonList } from "../contracts/interfaces";
 import axios from "axios";
 
 export interface PokeContext {
@@ -7,6 +7,8 @@ export interface PokeContext {
 	setPokemons: (list: PokemonList[]) => void;
 	dark: boolean;
 	setDark: (value: boolean) => void;
+	pokeTypes: IType[];
+	setPokeTypes: (list: IType[]) => void;
 }
 
 export const mainContext = createContext<PokeContext | null>(null);
@@ -15,6 +17,26 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	const [pokemons, setPokemons] = useState<PokemonList[]>([]);
 
 	const [dark, setDark] = useState<boolean>(false);
+
+	// usestate für den types-fetch
+	const [pokeTypes, setPokeTypes] = useState<IType[]>([])
+
+	// fetch von den Types
+	useEffect(()=> {
+		const getData = async () => {
+			try{
+				const resp = await axios.get(`https://pokeapi.co/api/v2/type`)
+				
+				if (resp) {
+					setPokeTypes(resp.data.results)
+					// console.log("Types", resp.data.results);
+				}
+			} catch(err){
+				console.warn(`something went wrong fetching TYPES`, err)
+			}
+		}; getData()
+	}, [])
+
 
 	useEffect(() => {
 		const getData = async () => {
@@ -25,7 +47,6 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 				if (response) {
 					setPokemons(response.data.results);
 				}
-				console.log(response.data.results);
 			} catch (error) {
 				console.warn(error, "hier ist was schief gegangen.");
 			}
@@ -40,7 +61,7 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	});
 
 	return (
-		<mainContext.Provider value={{ pokemons, setPokemons, dark, setDark }}>
+		<mainContext.Provider value={{ pokemons, setPokemons, dark, setDark, pokeTypes, setPokeTypes }}>
 			{children}
 		</mainContext.Provider>
 	);

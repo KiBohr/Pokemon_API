@@ -25,16 +25,17 @@ export const Drawer: React.FunctionComponent<PropsWithChildren<Props>> = ({
 
 			<div className='fixed inset-0 overflow-hidden'>
 				<div className='absolute inset-0 overflow-hidden'>
-					<div className='pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10'>
+					<div className='fixed inset-y-0 right-0 flex max-w-full pl-10'>
 						<DialogPanel
 							transition
-							className='pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700'
+							className='w-screen max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700'
 						>
 							<div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
 								<div className='px-4 sm:px-6'>
-									<div className='flex items-start justify-between'>
+									<div className='flex items-center justify-between'>
 										<DialogTitle className='text-base font-semibold text-gray-900'>
-											Pokemon LOGO
+											{/* Pokemon Logo */}
+											<img src="../../../public/img/PokeLogo.svg" alt="logo of Pokemon" />
 										</DialogTitle>
 										<div className='ml-3 flex h-7 items-center'>
 											<button
@@ -44,12 +45,15 @@ export const Drawer: React.FunctionComponent<PropsWithChildren<Props>> = ({
 											>
 												<span className='absolute -inset-2.5' />
 												<span className='sr-only'>Close panel</span>
-												<p>X</p>
+												<div className="h-8 w-8 transition ease-in-out hover:animate-ping cursor-pointer">
+													<img className="object-cover " src="../../../public/img/PokeballBack.png" alt="picture of a pokeball" />
+												</div>
 											</button>
 										</div>
 									</div>
 								</div>
-								<div className='relative mt-6 flex-1 px-4 sm:px-6'>
+								<div className=' p-10 grid grid-cols-2 gap-4'>
+									{/* altes styling relative mt-6 flex-1 px-4 sm:px-6 */}
 									{children}
 								</div>
 							</div>
