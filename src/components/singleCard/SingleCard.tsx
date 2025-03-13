@@ -26,18 +26,25 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 	}, [pokemon]);
 
 	if (!pokeDetails) {
-		return ;
+		return;
 	}
 	return (
-			<Link to="detail" className="cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-inner to-white rounded-md transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-inner hover:to-white ">
-			<div className="h-50 w-50">
-				<img className="object-cover" src={pokeDetails.sprites.other["official-artwork"].front_shiny} alt={pokeDetails.name} />
+		<Link
+			to={`detail/${pokemon.name}`}
+			className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-inner to-white rounded-md transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-inner hover:to-white '
+		>
+			<div className='h-50 w-50'>
+				<img
+					className='object-cover'
+					src={pokeDetails.sprites.other["official-artwork"].front_shiny}
+					alt={pokeDetails.name}
+				/>
 			</div>
-			<div className="flex px-5 py-1 items-center justify-between bg-white w-[100%]">
-				<p className="text-sm " >{`#${pokeDetails.id}`}</p>
-				<p className="text-sm  uppercase" >{pokeDetails.name}</p>
+			<div className='flex px-5 py-1 items-center justify-between bg-white w-[100%]'>
+				<p className='text-sm '>{`#${pokeDetails.id}`}</p>
+				<p className='text-sm  uppercase'>{pokeDetails.name}</p>
 			</div>
-			</Link>
+		</Link>
 	);
 };
 
