@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Pokemon, PokemonList } from "../../contracts/interfaces";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Loading from "../loading/Loading";
 
 interface Props {
 	pokemon: PokemonList;
@@ -35,8 +34,8 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 				<img className="object-cover" src={pokeDetails.sprites.other["official-artwork"].front_shiny} alt={pokeDetails.name} />
 			</div>
 			<div className="flex px-5 py-1 items-center justify-between bg-white w-[100%]">
-				<p className="text-xl" >{`#${pokeDetails.id}`}</p>
-				<p className="text-xl uppercase" >{pokeDetails.name}</p>
+				<p className="text-sm " >{`#${pokeDetails.id}`}</p>
+				<p className="text-sm  uppercase" >{pokeDetails.name}</p>
 			</div>
 			</Link>
 	);
