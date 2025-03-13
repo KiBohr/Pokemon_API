@@ -27,7 +27,7 @@ function App() {
 		)
 	);
 	return (
-		<main className={`font-[Roboto] bg-background ${dark && "bg-slate-800"}`}>
+		<main className={`font-[Roboto] bg-background ${dark && "bg-background-dark"} text-background-dark`}>
 			<RouterProvider router={router} />
 		</main>
 	);
