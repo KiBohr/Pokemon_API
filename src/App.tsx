@@ -21,7 +21,8 @@ function App() {
 				<Route index element={<Home />} />
 				<Route path='filter' element={<Filter />} />
 				<Route path='filteredPokemon' element={<FilteredPokemon />} />
-				<Route path='detail' element={<Detail />} />
+				{/* der Path zu der DetailPokemon ansichtsSeite mit Verwendung von useParams */}
+				<Route path='detail/:pokeDetailsParam' element={<Detail />} />
 			</Route>
 		)
 	);
