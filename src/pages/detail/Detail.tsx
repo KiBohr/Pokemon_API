@@ -11,7 +11,8 @@ const Detail: React.FunctionComponent = () => {
 	const { pokeDetailsParam: pokemonName } = useParams();
 	// über den useContext werden die Daten vom MainContext weitergegeben und schon typisiert
 	const { pokemons: pokemonList } = useContext(mainContext) as PokeContext;
-	console.log(pokemonName);
+
+	// console.log(pokemonName);
 
 	//die Poke Detailt werden im useState gespeichert und haben den Type Pokemon
 	const [pokeDetails, setPokeDetails] = useState<Pokemon>();
