@@ -54,11 +54,13 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 		getData();
 	}, []);
 
-	console.log("poke:", pokemons);
+	// ! der log kann weg?
+	// console.log("poke:", pokemons);
 
-	useEffect(() => {
-		const getSinglePokemonData = async () => {};
-	});
+	// - das hier kann auch weg oder?
+	// useEffect(() => {
+	// 	const getSinglePokemonData = async () => {};
+	// });
 
 	return (
 		<mainContext.Provider value={{ pokemons, setPokemons, dark, setDark, pokeTypes, setPokeTypes }}>

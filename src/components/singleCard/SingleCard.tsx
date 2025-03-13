@@ -41,7 +41,8 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 				/>
 			</div>
 			<div className='flex px-5 py-1 items-center justify-between bg-white w-[100%]'>
-				<p className='text-sm '>{`#${pokeDetails.id}`}</p>
+				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
+				
 				<p className='text-sm  uppercase'>{pokeDetails.name}</p>
 			</div>
 		</Link>

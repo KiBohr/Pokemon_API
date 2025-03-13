@@ -12,14 +12,15 @@ const Home = () => {
 	const [filterInput, setFilterInput] = useState("");
 
 	return (
-		<>
-			{/* todo styling */}
-			{/* neues input feld, damit es leicter wird  anzuzeigen */}
+		<section className="flex flex-col items-center">
+			{/* todo styling, done :) */}
+			{/* neues input feld, damit es leichter wird  anzuzeigen */}
 			<input
 				type='text'
 				value={filterInput}
 				onChange={(event) => setFilterInput(event.target.value)}
-				className='border-2'
+				placeholder="type something"
+				className='border-2 rounded-full px-5 py-2 border-white bg-white text-text-outer md:px-20 md:text-2xl lg:px-40 lg:text-3xl'
 			/>
 			{!pokemons && <Loading />}
 			<div className='grid grid-cols-2 gap-5 mx-5 my-10 sm:grid-cols-3 md:grid-cols-4 md:mx-10 lg:grid-cols-5 lg:mx-20 lg:gap-10'>
@@ -33,7 +34,7 @@ const Home = () => {
 						);
 					})}
 			</div>
-		</>
+		</section>
 	);
 };
 

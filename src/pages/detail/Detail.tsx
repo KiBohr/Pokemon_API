@@ -55,13 +55,13 @@ const Detail: React.FunctionComponent = () => {
 
 	return (
 		<div className='p-9'>
-			<div className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-inner to-white rounded-md transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-inner hover:to-white '>
-				<img
+			<div className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-outer to-white rounded-t-full h-80 transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-outer hover:to-white '>
+				<img className="mb-5"
 					src={pokeDetails.sprites.other["official-artwork"].front_default}
 					alt={pokeDetails.name}
 				/>
 			</div>
-			<div className='text-4xl flex justify-evenly'>
+			<div className='text-4xl flex justify-evenly bg-white p-5'>
 				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
 				<p>{pokeDetails.name.toUpperCase()}</p>
 			</div>
