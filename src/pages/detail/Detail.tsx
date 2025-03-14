@@ -55,8 +55,8 @@ const Detail: React.FunctionComponent = () => {
 
 	return (
 		<div className='p-9'>
-			<div className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-outer to-white rounded-t-full h-80 transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-outer hover:to-white '>
-				<img className="mb-5"
+			<div className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-outer to-white rounded-t-full h-80 transition ease-in-out hover:shadow-2xl'>
+				<img className="mb-5 transition ease-in-out hover:animate-wiggle"
 					src={pokeDetails.sprites.other["official-artwork"].front_default}
 					alt={pokeDetails.name}
 				/>

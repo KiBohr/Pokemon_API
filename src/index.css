@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  /* colors: */
     --color-text-inner: #FFCB05;
+    --color-text-inner-dark: #C7A008;
     --color-text-outer: #2C72B8;
-    --color-background: #E3EEF1;
+    --color-background: #C1D6DC;
     --color-background-dark: #1D2C5E;
 
     --color-bug: #3BB900;
@@ -24,6 +26,17 @@
     --color-rock: #E1B237;
     --color-steel: #2A4950;
     --color-water: #00A0E4;
+
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
   }
   
   @font-face {

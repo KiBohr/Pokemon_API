@@ -16,13 +16,16 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
 	};
 
 	return (
-		<div className='flex flex-col px-4 py-6 '>
-			<img
+		<div className='flex flex-col px-4 py-6'>
+			
+				<img
 				src='../../../public/img/PokeLogo.svg'
 				alt='Pokemon Logo'
-				className='pb-5'
-			/>
-			<nav className='flex justify-between'>
+				className='pb-10 md:pb-20 lg:pb-30 lg:w-200 lg:self-center'
+				/>
+			
+			
+			<nav className='flex justify-between items-center lg:justify-center lg:gap-200'>
 				<BurgerButton
 					onClick={() => {
 						setOpen(true);
