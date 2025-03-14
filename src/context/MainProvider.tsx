@@ -9,6 +9,8 @@ export interface PokeContext {
 	setDark: (value: boolean) => void;
 	pokeTypes: IType[];
 	setPokeTypes: (list: IType[]) => void;
+	filterType: IType | undefined;
+	setFilterType: (value: IType) => void;
 }
 
 export const mainContext = createContext<PokeContext | null>(null);
@@ -19,24 +21,27 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	const [dark, setDark] = useState<boolean>(false);
 
 	// usestate für den types-fetch
-	const [pokeTypes, setPokeTypes] = useState<IType[]>([])
+	const [pokeTypes, setPokeTypes] = useState<IType[]>([]);
+
+	//useState für PokeType
+	const [filterType, setFilterType] = useState<IType | undefined>();
 
 	// fetch von den Types
-	useEffect(()=> {
+	useEffect(() => {
 		const getData = async () => {
-			try{
-				const resp = await axios.get(`https://pokeapi.co/api/v2/type`)
-				
+			try {
+				const resp = await axios.get(`https://pokeapi.co/api/v2/type`);
+
 				if (resp) {
-					setPokeTypes(resp.data.results)
+					setPokeTypes(resp.data.results);
 					// console.log("Types", resp.data.results);
 				}
-			} catch(err){
-				console.warn(`something went wrong fetching TYPES`, err)
+			} catch (err) {
+				console.warn(`something went wrong fetching TYPES`, err);
 			}
-		}; getData()
-	}, [])
-
+		};
+		getData();
+	}, []);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -63,7 +68,18 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 	// });
 
 	return (
-		<mainContext.Provider value={{ pokemons, setPokemons, dark, setDark, pokeTypes, setPokeTypes }}>
+		<mainContext.Provider
+			value={{
+				pokemons,
+				setPokemons,
+				dark,
+				setDark,
+				pokeTypes,
+				setPokeTypes,
+				filterType,
+				setFilterType,
+			}}
+		>
 			{children}
 		</mainContext.Provider>
 	);
