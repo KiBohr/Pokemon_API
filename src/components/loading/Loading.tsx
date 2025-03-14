@@ -1,11 +1,10 @@
-import "./loading.css"
+
 
 const Loading = () => {
     return ( 
-        <div className="wrapper">
-            <div className="pokeball">
-            </div>
-      </div>
+       <div className="h-10 w-10 transition ease-in-out animate-ping">
+            <img className="object-cover" src="../../../public/img/Pokeball.svg" alt="picture of a masterball" />
+       </div>
       );
 }
  

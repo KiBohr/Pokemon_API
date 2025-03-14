@@ -33,7 +33,7 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 
 	if (!pokeDetails) {
 		//hier wäre noch ein Loadingspinner nice
-		return <div className='h-50 w-50'>...</div>;
+		return <div className='h-50 w-50 flex items-center justify-center'><Loading/></div>;
 	}
 	if (
 		filterType !== undefined &&
@@ -48,7 +48,7 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 		>
 			<div className='h-50 w-50'>
 				<img
-					className='object-cover'
+					className='object-cover transition ease-in-out hover:drop-shadow-lg'
 					src={pokeDetails.sprites.other["official-artwork"].front_shiny}
 					alt={pokeDetails.name}
 				/>
