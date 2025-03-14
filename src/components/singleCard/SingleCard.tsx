@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Pokemon, PokemonList } from "../../contracts/interfaces";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { mainContext, PokeContext } from "../../context/MainProvider";
+import Loading from "../loading/Loading";
 
 interface Props {
 	pokemon: PokemonList;
@@ -9,6 +11,10 @@ interface Props {
 
 const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 	const [pokeDetails, setPokeDetails] = useState<Pokemon>();
+
+	const { filterType } = useContext(mainContext) as PokeContext;
+	// hier müsste noch eine Variable gesetzt werden, in der der ausgewählte Type gespeichert wird
+	//wo 'grass' steht
 
 	useEffect(() => {
 		const getData = async () => {
@@ -26,6 +32,13 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 	}, [pokemon]);
 
 	if (!pokeDetails) {
+		//hier wäre noch ein Loadingspinner nice
+		return <div className='h-50 w-50'>...</div>;
+	}
+	if (
+		filterType !== undefined &&
+		!pokeDetails.types.some((entry) => entry.type.name === filterType?.name)
+	) {
 		return;
 	}
 	return (
@@ -42,7 +55,7 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 			</div>
 			<div className='flex px-5 py-1 items-center justify-between bg-white w-[100%]'>
 				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
-				
+
 				<p className='text-sm  uppercase'>{pokeDetails.name}</p>
 			</div>
 		</Link>
