@@ -61,15 +61,15 @@ const Detail: React.FunctionComponent = () => {
 					alt={pokeDetails.name}
 				/>
 			</div>
-			<div className='text-4xl flex justify-evenly bg-white p-5'>
+			<div className='sm:text-2xl md:text-3xl lg:text-4xl flex justify-evenly bg-white p-5'>
 				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
-				<p>{pokeDetails.name.toUpperCase()}</p>
+				<p className="break-all">{pokeDetails.name.toUpperCase()}</p>
 			</div>
 			<div>
-				{/* <p className=''>{pokeDetails.types.map((entry) => entry.type.name)}</p> */}
+				<p className=''>{pokeDetails.types.map((entry) => entry.type.name)}</p>
 
-				{/* <img src={pokeDetails.sprites.other.showdown.back_shiny} alt='' />
-				<img src={pokeDetails.sprites.other.showdown.front_shiny} alt='' /> */}
+				<img className="" src={pokeDetails.sprites.other.showdown.back_default} alt='' />
+				<img src={pokeDetails.sprites.other.showdown.front_default} alt='' />
 			</div>
 		</div>
 	);
