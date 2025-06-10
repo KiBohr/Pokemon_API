@@ -9,11 +9,12 @@ const Layout = () => {
 	const hideHeader = location.pathname === "/filter";
 
 	return (
-		<>
+		<div className="flex flex-col min-h-screen">
 			{!hideHeader && <Header />}
 			<Outlet />
-			<Footer />
-		</>
+			<Footer/>
+		</div>
+			
 	);
 };
 

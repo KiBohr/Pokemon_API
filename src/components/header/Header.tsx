@@ -3,10 +3,14 @@ import BurgerButton from "./BurgerButton";
 import { Drawer } from "./Drawer";
 import { PokeContext, mainContext } from "../../context/MainProvider";
 import Types from "../types/Types";
+import { useNavigate } from "react-router-dom";
 
 interface IHeaderProps {}
 
 const Header: React.FunctionComponent<IHeaderProps> = () => {
+
+	const navigate = useNavigate()
+
 	const [open, setOpen] = useState(false);
 
 	const { dark, setDark, pokeTypes } = useContext(mainContext) as PokeContext;
@@ -22,6 +26,7 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
 				src='../../../public/img/PokeLogo.svg'
 				alt='Pokemon Logo'
 				className='pb-10 md:pb-20 lg:pb-30 lg:w-200 lg:self-center'
+				onClick={() => navigate("/")}
 				/>
 			
 			
