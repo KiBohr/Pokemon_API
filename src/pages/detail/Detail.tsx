@@ -47,14 +47,37 @@ const Detail: React.FunctionComponent = () => {
 		getData();
 		//Anpassen der Dependencies, damit sich der useEffect daran orientiert.
 	}, [pokemonName, pokemonList]);
+	
 
 	//hier wäre platz für eine Ladeanimation
 	if (!pokeDetails) {
 		return <Loading />;
 	}
 
+	// here object with type-colouring info
+	const typeColors = {
+		bug: "text-bug",
+		dark: "text-dark",
+		dragon: "text-dragon",
+		electric: "text-electric",
+		fairy: "text-fairy", 
+		fighting: "text-fighting",
+		fire: "text-fire",
+		flying: "text-flying",
+		ghost: "text-ghost",
+		grass: "text-grass",
+		ground: "text-ground",
+		ice: "text-ice",
+		normal: "text-normal",
+		poison: "text-poison",
+		psychic: "text-psychic",
+		rock: "text-rock",
+		steel: "text-steel",
+		water: "text-water"
+	}
+
 	return (
-		<div className='p-9'>
+		<div className='p-9 '>
 			<div className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-outer to-white rounded-t-full h-80 transition ease-in-out hover:shadow-2xl'>
 				<img className="mb-5 transition ease-in-out hover:animate-wiggle"
 					src={pokeDetails.sprites.other["official-artwork"].front_default}
@@ -65,11 +88,37 @@ const Detail: React.FunctionComponent = () => {
 				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
 				<p className="break-all">{pokeDetails.name.toUpperCase()}</p>
 			</div>
-			<div>
-				<p className=''>{pokeDetails.types.map((entry) => entry.type.name)}</p>
 
-				<img className="" src={pokeDetails.sprites.other.showdown.back_default} alt='' />
-				<img src={pokeDetails.sprites.other.showdown.front_default} alt='' />
+			<div className="bg-white p-5 my-5 flex items-center justify-evenly text-[0.6rem] md:text-sm">
+					<div className="flex flex-col gap-2 items-center">
+						<img className="md:h-40" src={pokeDetails.sprites.other.showdown.front_default} alt='' />
+						<p className="">front</p>
+					</div>
+					<div className="flex flex-col items-center gap-2 ">
+						<img className="md:h-40" src={pokeDetails.sprites.other.showdown.back_default} alt='' />
+						<p>back</p>
+					</div>
+			</div>
+
+			<div className="bg-white p-5 my-5 flex items-center rounded-b-xl justify-between">
+					<p className="">
+						{pokeDetails.types.length === 1 
+						? "Type:"
+						: "Types:"}
+					</p>
+					<div>
+						{pokeDetails.types.map((entry, index) => (
+							 <span
+							 key={index}
+							 className={`px-2 py-1 text-sm font-bold ${
+							   typeColors[entry.type.name.toLowerCase()] 
+							 }`}
+						   >
+							 {entry.type.name}
+						   </span>
+						
+						))}
+					</div>
 			</div>
 		</div>
 	);
