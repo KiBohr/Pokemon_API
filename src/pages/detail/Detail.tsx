@@ -77,19 +77,19 @@ const Detail: React.FunctionComponent = () => {
 	}
 
 	return (
-		<div className='p-9 '>
+		<div className='p-9'>
 			<div className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-outer to-white rounded-t-full h-80 transition ease-in-out hover:shadow-2xl'>
 				<img className="mb-5 transition ease-in-out hover:animate-wiggle"
 					src={pokeDetails.sprites.other["official-artwork"].front_default}
 					alt={pokeDetails.name}
 				/>
 			</div>
-			<div className='sm:text-2xl md:text-3xl lg:text-4xl flex justify-evenly bg-white p-5'>
+			<div className='sm:text-2xl md:text-3xl lg:text-4xl flex justify-evenly bg-white p-5 '>
 				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
 				<p className="break-all">{pokeDetails.name.toUpperCase()}</p>
 			</div>
 
-			<div className="bg-white p-5 my-5 flex items-center justify-evenly text-[0.6rem] md:text-sm">
+			<div className="bg-white p-5 my-5 flex items-center justify-evenly text-[0.6rem] md:text-sm transition ease-in-out hover:shadow-2xl">
 					<div className="flex flex-col gap-2 items-center">
 						<img className="md:h-40" src={pokeDetails.sprites.other.showdown.front_default} alt='' />
 						<p className="">front</p>
@@ -100,7 +100,7 @@ const Detail: React.FunctionComponent = () => {
 					</div>
 			</div>
 
-			<div className="bg-white p-5 my-5 flex items-center rounded-b-xl justify-between">
+			<div className="bg-white p-5 my-5 flex items-center rounded-b-xl justify-between transition ease-in-out hover:shadow-2xl">
 					<p className="">
 						{pokeDetails.types.length === 1 
 						? "Type:"
@@ -111,6 +111,7 @@ const Detail: React.FunctionComponent = () => {
 							 <span
 							 key={index}
 							 className={`px-2 py-1 text-sm font-bold ${
+								// doesnt like it but it works 
 							   typeColors[entry.type.name.toLowerCase()] 
 							 }`}
 						   >
