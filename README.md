@@ -1,6 +1,9 @@
 # Pokemon API
 
-<img src=".../../../public/img/PokeLogo.svg" alt="Logo of Pokemon" />
+![mov_screenshot](https://github.com/user-attachments/assets/a09ccd0d-812b-4ec4-a186-682545e94272)
+
+![pokemon_screenshot](https://github.com/user-attachments/assets/4d4cac02-d066-4492-8fea-feb202b1daf2)
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
