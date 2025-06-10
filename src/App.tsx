@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/home/Home";
-import Filter from "./pages/filter/Filter";
 import Detail from "./pages/detail/Detail";
 import { useContext } from "react";
 import { mainContext, PokeContext } from "./context/MainProvider";
@@ -18,7 +17,6 @@ function App() {
 		createRoutesFromElements(
 			<Route path='/' element={<Layout />}>
 				<Route index element={<Home />} />
-				<Route path='filter' element={<Filter />} />
 				{/* der Path zu der DetailPokemon ansichtsSeite mit Verwendung von useParams */}
 				<Route path='detail/:pokeDetailsParam' element={<Detail />} />
 			</Route>
