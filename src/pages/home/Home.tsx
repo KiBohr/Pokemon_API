@@ -22,7 +22,7 @@ const Home = () => {
 			/>
 
 			{!pokemons && <Loading />}
-			<div className='grid grid-cols-2 gap-5 mx-5 my-10 sm:grid-cols-3 md:grid-cols-4 md:mx-10 lg:grid-cols-5 lg:mx-20 lg:gap-10'>
+			<div className='grid grid-cols-2 gap-5 mx-5 my-10 sm:grid-cols-3 md:grid-cols-4 md:mx-10 lg:mx-20 lg:gap-10'>
 				{pokemons
 					// filter welche pokemon beim map verwendet werden sollen.
 					// filter gibt ein array zurück
