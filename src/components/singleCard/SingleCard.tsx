@@ -25,7 +25,7 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 				}
 				console.log(response.data);
 			} catch (error) {
-				console.warn(error, "hier ist was schief gegangen.");
+				console.warn(error, "error when fetching pokemon.");
 			}
 		};
 		getData();
@@ -44,19 +44,19 @@ const SingleCard: React.FunctionComponent<Props> = ({ pokemon }) => {
 	return (
 		<Link
 			to={`detail/${pokemon.name}`}
-			className='cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-inner to-white rounded-md transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-inner hover:to-white '
+			className='text-[0.7rem] cursor-pointer shadow-2xs flex flex-col items-center justify-center gap-2  bg-linear-to-t from-text-inner to-white rounded-md transition ease-in-out hover:shadow-2xl hover:bg-linear-to-b hover:from-text-inner hover:to-white '
 		>
-			<div className='h-50 w-50'>
+			<div className='h-45 w-45'>
 				<img
 					className='object-cover transition ease-in-out hover:drop-shadow-lg'
 					src={pokeDetails.sprites.other["official-artwork"].front_shiny}
 					alt={pokeDetails.name}
 				/>
 			</div>
-			<div className='flex px-5 py-1 items-center justify-between bg-white w-[100%]'>
+			<div className=' truncate flex px-5 py-1 items-center justify-between bg-white w-[100%]'>
 				<p>#{pokeDetails.id.toString().padStart(3, "0")}</p>
 
-				<p className='text-sm  uppercase'>{pokeDetails.name}</p>
+				<p className=' uppercase'>{pokeDetails.name}</p>
 			</div>
 		</Link>
 	);
