@@ -6,7 +6,7 @@ import Loading from "../../components/loading/Loading";
 
 
 const Home = () => {
-	const { pokemons, setPokemons } = useContext(mainContext) as PokeContext;
+	const { pokemons } = useContext(mainContext) as PokeContext;
 	//useState für zwischenspeicher der input eingabe und zugriff drauf
 	const [filterInput, setFilterInput] = useState("");
 

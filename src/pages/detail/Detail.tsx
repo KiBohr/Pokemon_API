@@ -55,7 +55,10 @@ const Detail: React.FunctionComponent = () => {
 	}
 
 	// here object with type-colouring info
-	const typeColors = {
+	const typeColors: Record<
+		"bug" | "dark" | "dragon" | "electric" | "fairy" | "fighting" | "fire" | "flying" | "ghost" | "grass" | "ground" | "ice" | "normal" | "poison" | "psychic" | "rock" | "steel" | "water",
+		string
+	> = {
 		bug: "text-bug",
 		dark: "text-dark",
 		dragon: "text-dragon",
@@ -112,7 +115,8 @@ const Detail: React.FunctionComponent = () => {
 							 key={index}
 							 className={`px-2 py-1 text-sm font-bold ${
 								// doesnt like it but it works 
-							   typeColors[entry.type.name.toLowerCase()] 
+								typeColors[entry.type.name.toLowerCase() as keyof typeof typeColors]
+
 							 }`}
 						   >
 							 {entry.type.name}
