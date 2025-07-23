@@ -23,7 +23,7 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
 		<div className='flex flex-col px-4 py-6'>
 			
 				<img
-				src='../../../public/img/PokeLogo.svg'
+				src='/img/PokeLogo.svg'
 				alt='Pokemon Logo'
 				className='pb-10 md:pb-20 lg:pb-30 lg:w-200 lg:self-center'
 				onClick={() => navigate("/")}
