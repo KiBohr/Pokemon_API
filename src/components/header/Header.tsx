@@ -55,7 +55,7 @@ const Header: React.FunctionComponent<IHeaderProps> = () => {
 				<img
 					className='cursor-pointer md:w-[40px] md:h-[40px] lg:w-[60px] lg:h-[60px] transition ease-in-out hover:drop-shadow-2xl'
 					onClick={getFullPageDark}
-					src='../../../public/img/mode.svg'
+					src='/img/mode.svg'
 					alt=''
 				/>
 			</nav>

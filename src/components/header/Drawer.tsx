@@ -35,7 +35,7 @@ export const Drawer: React.FunctionComponent<PropsWithChildren<Props>> = ({
 									<div className='flex items-center justify-between'>
 										<DialogTitle className='text-base font-semibold text-gray-900'>
 											{/* Pokemon Logo */}
-											<img src="../../../public/img/PokeLogo.svg" alt="logo of Pokemon" />
+											<img src="/img/PokeLogo.svg" alt="logo of Pokemon" />
 										</DialogTitle>
 										<div className='ml-3 flex h-7 items-center'>
 											<button
@@ -46,7 +46,7 @@ export const Drawer: React.FunctionComponent<PropsWithChildren<Props>> = ({
 												<span className='absolute -inset-2.5' />
 												<span className='sr-only'>Close panel</span>
 												<div className="h-8 w-8 transition ease-in-out hover:animate-ping cursor-pointer">
-													<img className="object-cover " src="../../../public/img/PokeballBack.png" alt="picture of a pokeball" />
+													<img className="object-cover " src="/img/PokeballBack.png" alt="picture of a pokeball" />
 												</div>
 											</button>
 										</div>
